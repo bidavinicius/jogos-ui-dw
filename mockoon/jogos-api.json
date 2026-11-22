@@ -1,0 +1,102 @@
+{
+  "uuid": "4032f845-d1f8-4d2d-aa87-f0e19951f3bd",
+  "lastMigration": 33,
+  "name": "Jogos API",
+  "endpointPrefix": "api",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "dafeef49-aaf9-4d4e-a6b6-853341215979",
+      "type": "crud",
+      "documentation": "CRUD de jogos",
+      "method": "",
+      "endpoint": "jogos",
+      "responses": [
+        {
+          "uuid": "c13132cb-3457-4291-b010-a9e7bdf680d0",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "DATABUCKET",
+          "filePath": "",
+          "databucketID": "86ug",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "dafeef49-aaf9-4d4e-a6b6-853341215979"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [
+    {
+      "uuid": "c1a0b3c2-8f64-4331-a827-e18e03ce6505",
+      "id": "86ug",
+      "name": "Jogos",
+      "documentation": "",
+      "value": "[\n  {\n    \"id\": \"1\",\n    \"titulo\": \"The Legend of Zelda: Breath of the Wild\",\n    \"plataforma\": \"Nintendo Switch\",\n    \"genero\": \"Aventura\",\n    \"ano\": 2017\n  },\n  {\n    \"id\": \"2\",\n    \"titulo\": \"God of War\",\n    \"plataforma\": \"PlayStation 4\",\n    \"genero\": \"Ação\",\n    \"ano\": 2018\n  },\n  {\n    \"id\": \"3\",\n    \"titulo\": \"Minecraft\",\n    \"plataforma\": \"PC\",\n    \"genero\": \"Sandbox\",\n    \"ano\": 2011\n  },\n  {\n    \"id\": \"4\",\n    \"titulo\": \"Hollow Knight\",\n    \"plataforma\": \"PC\",\n    \"genero\": \"Metroidvania\",\n    \"ano\": 2017\n  },\n  {\n    \"id\": \"5\",\n    \"titulo\": \"Forza Horizon 5\",\n    \"plataforma\": \"Xbox Series X|S\",\n    \"genero\": \"Corrida\",\n    \"ano\": 2021\n  }\n]"
+    }
+  ],
+  "callbacks": []
+}
