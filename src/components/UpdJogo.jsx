@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import JogoDataService from "../services/JogoDataService";
 
 function UpdJogo() {
   const { id } = useParams(); 
+  const navigate = useNavigate();
 
   const [jogo, setJogo] = useState(null);
   const [mensagem, setMensagem] = useState("");
 
+  
   useEffect(() => {
     JogoDataService.get(id)
       .then((response) => {
@@ -36,6 +38,19 @@ function UpdJogo() {
         console.error("Erro ao atualizar jogo:", e);
         setMensagem("Erro ao atualizar o jogo.");
       });
+  };
+
+  const deleteJogo = () => {
+    if (window.confirm("Tem certeza que deseja excluir este jogo?")) {
+      JogoDataService.delete(jogo.id)
+        .then(() => {
+          navigate("/list");
+        })
+        .catch((e) => {
+          console.error("Erro ao excluir jogo:", e);
+          setMensagem("Erro ao excluir o jogo.");
+        });
+    }
   };
 
   return (
@@ -98,8 +113,11 @@ function UpdJogo() {
             />
           </div>
 
-          <button className="btn btn-success" onClick={updateJogo}>
+          <button className="btn btn-success me-2" onClick={updateJogo}>
             Atualizar
+          </button>
+          <button className="btn btn-danger" onClick={deleteJogo}>
+            Excluir
           </button>
 
           {mensagem && <p className="mt-3">{mensagem}</p>}
