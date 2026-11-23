@@ -39,7 +39,9 @@ function ListJogo() {
             jogos.map((jogo) => (
               <tr key={jogo.id}>
                 <td>{jogo.titulo}</td>
-                <td>{jogo.plataforma}</td>
+                <td>
+                  <span className="badge badge-plataforma">{jogo.plataforma}</span>
+                </td>
                 <td>{jogo.genero}</td>
                 <td>{jogo.ano}</td>
                 <td>

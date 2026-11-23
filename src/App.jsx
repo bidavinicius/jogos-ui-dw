@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
+import "./App.css";
 import ListJogo from "./components/ListJogo";
 import AddJogo from "./components/AddJogo";
 import UpdJogo from "./components/UpdJogo";
@@ -23,7 +23,7 @@ function App() {
         </div>
       </nav>
 
-      <div className="container mt-4">
+      <div className="container mt-4 conteúdo">
         <Routes>
           <Route path="/" element={<ListJogo />} />
           <Route path="/list" element={<ListJogo />} />
