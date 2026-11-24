@@ -6,7 +6,7 @@ O front-end consome uma API REST simulada com o [Mockoon](https://mockoon.com/).
 
 ## Autores
 
-- Bida
+- Vinicius Ribas Bida
 - Giulia Victoria Vante
 
 ## Tecnologias
