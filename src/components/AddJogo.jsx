@@ -20,20 +20,27 @@ function AddJogo() {
     setJogo({ ...jogo, [name]: value });
   };
 
-  const saveJogo = () => {
+    const saveJogo = () => {
     if (!jogo.titulo || !jogo.plataforma || !jogo.genero || !jogo.ano) {
       setErro("Preencha todos os campos.");
       return;
     }
 
-    const data = {
-      titulo: jogo.titulo,
-      plataforma: jogo.plataforma,
-      genero: jogo.genero,
-      ano: Number(jogo.ano),
-    };
+    JogoDataService.getAll()
+      .then((response) => {
+        const ids = response.data.map((j) => Number(j.id)).filter((n) => !isNaN(n));
+        const proximoId = ids.length > 0 ? Math.max(...ids) + 1 : 1;
 
-    JogoDataService.create(data)
+        const data = {
+          id: String(proximoId),
+          titulo: jogo.titulo,
+          plataforma: jogo.plataforma,
+          genero: jogo.genero,
+          ano: Number(jogo.ano),
+        };
+
+        return JogoDataService.create(data);
+      })
       .then((response) => {
         console.log("Jogo cadastrado:", response.data);
         setEnviado(true);
