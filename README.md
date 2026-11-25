@@ -22,8 +22,8 @@ O front-end consome uma API REST simulada com o [Mockoon](https://mockoon.com/).
 Precisa ter o [Node.js](https://nodejs.org/) instalado (versão 20.19 ou mais nova).
 
 ```bash
-git clone https://github.com/bidavinicius/jogos-ui.git
-cd jogos-ui
+git clone https://github.com/bidavinicius/jogos-ui-dw.git
+cd jogos-ui-dw
 npm install
 ```
 
